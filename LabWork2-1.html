@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app="LabWork2">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
+    <style type="text/css">
+    	.odd
+        {
+        	background-color: #f4f4f4
+        }
+        .even
+        {
+        	background-color: #e7dec8
+        }
+  	</style>
+  </head>
+  <body>
+    <div ng-controller="StudentsController">
+      <table border="1">
+        <tr>
+          <th>Student</th>
+          <th>Grade</th>
+        </tr>
+        <tr ng-repeat="Student in Students | orderBy: 'Grade'" ng-class="$odd ? 'odd' : 'even'">
+          <td>{{Student.FirstName + ' ' + Student.LastName.substring(0, 1) + '.'}}</td>
+          <td>{{Student.Grade}}</td>
+        </tr>
+      </table>
+    </div>
+    <script type="text/javascript">
+      var app = angular.module('LabWork2', []);
+      app.controller('StudentsController', function($scope) {
+        $scope.Students = 
+        [
+            {"FirstName": "Fedico", "LastName": "Victoria", "Grade": 2},
+            {"FirstName": "Vasilcenco", "LastName": "Liubovi", "Grade": 8},
+            {"FirstName": "Mojeico", "LastName": "Gleb", "Grade": 7},
+            {"FirstName": "Twist", "LastName": "Oliver", "Grade": 10},
+            {"FirstName": "Stalin", "LastName": "Iosif", "Grade": 5},
+            {"FirstName": "Nikitin", "LastName": "Vasilii", "Grade": 6},
+            {"FirstName": "Vasiliev", "LastName": "Nikita", "Grade": 8}
+        ]
+      });
+    </script>
+  </body>
+</html>
