@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">		</script>
+  </head>
+  <body ng-app="" ng-init="x=0,y=0">
+
+    Число a: <input type="number" ng-model="x"><br>
+    Число b: <input type="number" ng-model="y">
+
+    <p style="color:red" ng-if="y == 0">
+      Division by zero
+    </p>
+    <p style="color:red" ng-if="x == 0">
+      Division of zero
+    </p>
+    <p ng-else>
+      {{a}} / {{b}} == {{a / b}}
+    </p>
+  </body>
+</html>
